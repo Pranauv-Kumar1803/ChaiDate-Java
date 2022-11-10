@@ -1,5 +1,5 @@
 import org.json.simple.JSONObject;
-
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -43,7 +43,7 @@ public class Register extends Login{
             age = in.nextInt();
         }
         this.age = age;
-        System.out.printf("Age Noted\n");
+        System.out.print("Age Noted\n");
     }
 
     public void setGender(String gender) {
@@ -54,7 +54,7 @@ public class Register extends Login{
             gender = in.next();
         }
         this.gender = gender;
-        System.out.printf("Gender Noted\n");
+        System.out.print("Gender Noted\n");
     }
 
     public void setSocialHandle(String socialHandle) {
@@ -65,7 +65,7 @@ public class Register extends Login{
             socialHandle = in.next();
         }
         this.socialHandle = socialHandle;
-        System.out.printf("Social Handle Noted\n");
+        System.out.print("Social Handle Noted\n");
     }
 
     public void setConfirmPassword(String confirmPassword) {
@@ -76,6 +76,45 @@ public class Register extends Login{
             confirmPassword = in.next();
         }
         this.confirmPassword = confirmPassword;
+    }
+
+    public boolean checkUsernameExists(String u)
+    {
+        String url = "jdbc:mysql://localhost:3306/oops";
+        String username = "root";
+        String password = "Darshan2003Bennur";
+
+        try{
+            Connection con = DriverManager.getConnection(url,username,password);
+            Statement stmt = con.createStatement();
+
+            ResultSet set = stmt.executeQuery("select name from users");
+            while(set.next()) {
+                if(set.getString(1).equals(u))
+                    return true;
+            }
+        }catch(SQLException s1) {
+            s1.printStackTrace();
+        }
+        return false;
+    }
+    @Override
+    public void setUserName(String userName) {
+        while(userName.isEmpty()){
+            Scanner in = new Scanner(System.in);
+            System.out.println("Username Can't be Blank");
+            System.out.print("Enter A Username : ");
+            userName = in.nextLine();
+        }
+        while(checkUsernameExists(userName))
+        {
+            Scanner in = new Scanner(System.in);
+            System.out.println("Username already exists");
+            System.out.print("Enter A Username again : ");
+            userName = in.nextLine();
+        }
+        this.userName = userName;
+        System.out.print("User Name Noted\n");
     }
 
     @Override
@@ -95,31 +134,31 @@ public class Register extends Login{
         System.out.print("Enter any Social Handel : ");
         newPerson.setSocialHandle(in.next());
 
-        ArrayList<String> preferences = new ArrayList<String>();
+        ArrayList<String> preferences = new ArrayList<>();
 
         System.out.println("Choose your Preferences");
         System.out.println("1. Gym");
-        preferences.add("Gym");
+        preferences.add("gym");
         System.out.println("2. Geek");
-        preferences.add("Geek");
+        preferences.add("geek");
         System.out.println("3. Movie Buff");
-        preferences.add("Movie Buff");
+        preferences.add("movie_buff");
         System.out.println("4. Introvert");
-        preferences.add("Introvert");
+        preferences.add("introvert");
         System.out.println("5. Night Owl");
-        preferences.add("Night Owl");
+        preferences.add("night_owl");
         System.out.println("6. Gear Head");
-        preferences.add("Gear Head");
+        preferences.add("gear_head");
         System.out.println("7. Foodie");
-        preferences.add("Foodie");
+        preferences.add("foodie");
         System.out.println("8. Traveler");
-        preferences.add("Traveler");
+        preferences.add("traveler");
         System.out.println("9. Book Worm");
-        preferences.add("Book Worm");
+        preferences.add("book_worm");
         System.out.println("10. Music");
-        preferences.add("Music");
+        preferences.add("music");
         System.out.println("11. Sports");
-        preferences.add("Sports");
+        preferences.add("sports");
 
         JSONObject jsonObject = new JSONObject();
         System.out.println("Enter 1 if you want to Choose the Preference or else 0");
@@ -146,7 +185,7 @@ public class Register extends Login{
             System.out.print("Re-Enter Password : ");
             newPerson.setConfirmPassword(in.next());
         }
-        System.out.printf("Password Noted\n");
+        System.out.print("Password Noted\n");
 
         return "insert into users values(0,'" + newPerson.getUserName() + "'," + newPerson.getAge() + ",'" + newPerson.getGender()
                 + "','" + newPerson.getSocialHandle() + "','"+ jsonObject + "','"+ newPerson.getPassword() + "')";
