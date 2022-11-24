@@ -1,4 +1,4 @@
-[11:51, 11/24/2022] Pranauv: # ChaiDate 
+# ChaiDate 
 
 ## Our project is not just about going on a romantic date, it’s more than that, it’s about meeting new people and having interesting conversations over a cup of tea.
 #
