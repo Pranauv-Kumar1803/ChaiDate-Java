@@ -1,0 +1,10 @@
+Contribution - Details
+vishwajith - login and added authentication for the admin and users which will be used whenever there is an issue of invalid access
+subhangi  - designed classes and worked with registration and detailed conversion of input from user into suitable data formats
+Darshan - worked with JDBC ,interfaces,JSON conversion in JAVA  and matching the users with preferences and CRUD operations
+Pranauv - worked with the Database and finding places for the meeting place of the users and upload and update data into Database
+Siddhartha V - potential matches method/algorithm and Search by partial name,full name and search by id and JSON for JDBC and CRUD operations
+
+
+our project can adopt to both SQL and NoSQL databases (we have used JSON as our data format and suitable document decomposable schema)
+such that if we want to extend then we can do by updating few functions and some secret keys when we are hosting the database in the cloud
