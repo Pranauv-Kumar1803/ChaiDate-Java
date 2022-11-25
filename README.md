@@ -1,6 +1,7 @@
-# ChaiDate 
+# ChaiDate
 
 ## Our project is not just about going on a romantic date, it’s more than that, it’s about meeting new people and having interesting conversations over a cup of tea.
+
 #
 
 <details>
@@ -12,25 +13,25 @@
 
 ## About
 
-- ### An CLI application to meet people of their interests and form connections with them 
+- ### An CLI application to meet people of their interests and form connections with them
 
 - ### Can like people of their choices and can interact with them
 
-- ### Database (mysql) connectivity using JDBC 
+- ### Database (mysql) connectivity using JDBC
 
 - ### Uses MySQL as Database manager
 
-- ### Compatible with JSON via JSON manager so you can work with NoSQL databases 
+- ### Compatible with JSON via JSON manager so you can work with NoSQL databases
 
 - ### Uses File Handling to import data from CSV file and upload or update that in the DataBase
 
-- ### Has Partial Search Feature 
+- ### Has Partial Search Feature
 
 - ### Uses Java Streams to filter the Data whenever it's necessary
 
-- ### Implemented OOP principles and compositon 
+- ### Implemented OOP principles and compositon
 
-- ### Authentication of the users when logging in 
+- ### Authentication of the users when logging in
 
 - ### Can update his preferences and his profile and can do all the CRUD operations
 
@@ -47,17 +48,18 @@
 
 #
 
-
-
-
-## Members of this project : 
+#### To Run install all the dependecies and configure them and run the MySQLCON java file
 
 #
 
-S no  | Name
-------------- | -------------
- 1     | Darshan Bennur
- 2     | Siddhartha V  
- 3     | Subhangi
- 4     | Pranauv Kumar R
- 5     | Vishwajith S
+## Members of this project :
+
+#
+
+| S no | Name            |
+| ---- | --------------- |
+| 1    | Darshan Bennur  |
+| 2    | Siddhartha V    |
+| 3    | Subhangi        |
+| 4    | Pranauv Kumar R |
+| 5    | Vishwajith S    |
